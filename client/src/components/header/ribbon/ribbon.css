@@ -1,0 +1,6 @@
+.ribbon {
+    background-color: white;
+    height: 35px;
+    width: 100%;
+    box-shadow: 0px 2px 5px var(--shadow-color);
+}

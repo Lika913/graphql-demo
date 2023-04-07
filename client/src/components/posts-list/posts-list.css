@@ -1,0 +1,11 @@
+.posts-list {    
+    grid-area: posts;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+}

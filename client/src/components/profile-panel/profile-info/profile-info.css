@@ -1,0 +1,8 @@
+.profile-info {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 7px;
+    width: 100%;
+}

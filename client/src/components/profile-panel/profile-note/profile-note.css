@@ -1,0 +1,13 @@
+.profile-note {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: var(--gray-light);
+    font-size: 11px;
+    cursor: default;
+}
+
+.profile-note img {
+    width: 15px;
+    height: 15px;
+}

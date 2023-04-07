@@ -1,0 +1,52 @@
+.input-post {
+    grid-area: i;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.input-post textarea {
+    background-color: transparent;
+    resize: none;
+    overflow: auto;
+    font-size: 14px;
+    cursor: text;
+    padding: 5px;
+    border-style: dashed;
+    border-color: var(--gray);
+    border-width: 2px;
+    border-radius: 10px;
+    width: 330px;
+    height: 70px;
+    position: relative;
+    margin-top: 30px;
+    outline: none;
+    scrollbar-width: 2px;
+    color: var(--gray);
+}
+
+.input-post textarea:hover, .input-post textarea:focus {
+    border-color: black;
+    border-style: solid;
+    color: black;
+}
+
+.input-post textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+.input-post textarea::-webkit-scrollbar-track {
+    -moz-box-shadow: 5px 5px 5px -5px var(--shadow-color) inset;
+    box-shadow: 5px 5px 5px -5px var(--shadow-color) inset;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.input-post textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #739f8b;
+    -moz-background: linear-gradient(180deg, #00c6fb, #005bea);
+}

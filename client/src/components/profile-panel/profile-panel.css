@@ -1,0 +1,55 @@
+.profile-panel {    
+    grid-area: panel;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    width: 406px;
+    height: 340px;
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    position: relative;
+    align-items: center;
+
+    transition: left 1s ease;
+}
+
+.arrow-area {
+    width: 16px;
+    height: 340px;
+    background-color: var(--gray-ultra-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 7px;
+    height: 7px;  
+    background-color: transparent;
+    transform: rotate(45deg);    
+    border-top: 4px var(--gray-light) solid;
+    border-right: 4px var(--gray-light) solid;
+    margin-right: 4px;
+}
+
+.arrow-hidden {  
+    transform: rotate(225deg);   
+    margin-right: 0px;
+    margin-left: 4px; 
+}
+
+.panel {
+    display: flex;
+    gap: 7px;
+    flex-direction: column;
+    background-color: white;
+    height: 300px;
+    width: 350px;
+    position: relative;
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-color);
+    background: linear-gradient(to top, white 82%, var(--primary-color-light) 18%);
+}

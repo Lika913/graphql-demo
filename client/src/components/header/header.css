@@ -1,0 +1,22 @@
+.header-area {
+    grid-area: header;
+    background-color: var(--primary-color);
+    height: 95px;
+}
+
+.header {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    font-family: "Bradley Hand";
+    font-style: italic;
+    font-size: 45px;
+    font-weight: 600;
+    height: 95px;
+
+    user-select: none;
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
