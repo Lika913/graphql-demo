@@ -11,6 +11,7 @@ const InputPost = (props: IInputPostProps): JSX.Element => {
 
         if (textareaRef.current && textareaRef.current.value) {
             props.set_posts([{
+                id: props.posts.length + 1,
                 date_publication: new Date(),
                 likes_count: 0,
                 username: props.username,

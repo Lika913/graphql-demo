@@ -12,32 +12,6 @@
     transition: left 1s ease;
 }
 
-.arrow-area {
-    width: 16px;
-    height: 340px;
-    background-color: var(--gray-ultra-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.arrow {
-    width: 7px;
-    height: 7px;  
-    background-color: transparent;
-    transform: rotate(45deg);    
-    border-top: 4px var(--gray-light) solid;
-    border-right: 4px var(--gray-light) solid;
-    margin-right: 4px;
-}
-
-.arrow-hidden {  
-    transform: rotate(225deg);   
-    margin-right: 0px;
-    margin-left: 4px; 
-}
-
 .panel {
     display: flex;
     gap: 7px;

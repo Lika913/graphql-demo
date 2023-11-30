@@ -1,45 +1,47 @@
 import './post.css';
+import { useState } from 'react';
 import { IPostProps } from '../../../interfaces/props/IPostProps';
 import PublicationInfo from './publication-info/publication-info';
 //дописать чтобы если это пост собственный, то подсвечивалось и при нажатии выпадала менюшка
 
 const Post = (props: IPostProps): JSX.Element => {
 
-    const onMouseOver: React.MouseEventHandler = event => {
+    const [postClass, setPostClass] = useState<string>('post')
+    const [visibilityCross, setVisibilityCross] = useState<'visible' | 'hidden'>('hidden')
 
-        const target = event.target as HTMLDivElement;  
-        if (!target.classList.contains("post")) return; // проверяем что это нужный элемент,
-                                                        // а не вложенный        
-        target.classList.add("highlight");
-
-        const delete_flag = target.querySelector(".delete-flag") as HTMLDivElement;
-        delete_flag.style.visibility = "visible";
+    const onMouseEnterHandler = () => {
+        setPostClass("post highlight")
+        setVisibilityCross('visible')
+        console.log("onMouseEnterHandler");
+        
     }
 
-    const onMouseOut: React.MouseEventHandler = event => {
-
-        const target = event.target as HTMLDivElement;    
-        if (!target.classList.contains("post")) return;
+    const onMouseLeaveHandler = () => {
+        setPostClass("post")
+        setVisibilityCross('hidden')
         
-        if (event.relatedTarget) { //проверяем, что курсор перешёл не за область окна
-            const relatedTarget = event.relatedTarget as HTMLDivElement; 
-            if (relatedTarget.classList.contains("delete-flag")) return; // если мы перешли 
-        }                                  // на элемент внутри target, то ничего не делать
-        
-        target.classList.remove("highlight");
+        console.log("onMouseLeaveHandler");
+    }
 
-        const delete_flag = target.querySelector(".delete-flag") as HTMLDivElement;
-        delete_flag.style.visibility = "hidden";
+    const removePost = (id: number) => {
+        props.setPosts(oldPosts => oldPosts.filter(post => post.id != id))
     }
 
     return (
         <div className='post-area'>
             <div 
-                className='post' 
-                onMouseOver={onMouseOver} 
-                onMouseOut={onMouseOut}
+                className={postClass}
+                onMouseEnter={onMouseEnterHandler} 
+                onMouseLeave={onMouseLeaveHandler}
             >
-                <div className='delete-flag'></div>
+                <div 
+                    className='cross'
+                    style={{visibility: visibilityCross}}
+                    onClick={() => removePost(props.post.id)}
+                >
+                    <div className='right-slash'/>
+                    <div className='left-slash'/>
+                </div>
                 {props.post.message}
             </div>
             <PublicationInfo 

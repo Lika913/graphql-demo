@@ -6,7 +6,11 @@ const PostList = (props: IPostListProps): JSX.Element => {
     return (
         <div className='posts-list'>
             {props.posts.map(post => 
-                <Post post={post} />
+                <Post 
+                    key={post.id}
+                    post={post} 
+                    setPosts={props.setPosts}
+                />
             )}
         </div>
     );

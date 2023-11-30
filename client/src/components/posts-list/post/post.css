@@ -6,20 +6,25 @@
 }
 
 .post {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     min-height: 18px;
     width: 400px;
     border: 1px solid var(--accent-color);
     background-color: var(--primary-color-light);
     position: relative;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
+    padding-top: 5px;
     color: var(--gray);
     font-size: 12px;
     box-shadow: 0px 2px 5px var(--shadow-color);
     word-wrap: break-word;
+    cursor: default;
 }
 
-.post::before, .post::after{
+.post::before, .post::after {
     content: '';
     position: absolute;   
     background: var(--primary-color-light);   
@@ -47,7 +52,8 @@
 
 .highlight {
     border: 2px solid var(--accent-color); 
-    padding: 9px;
+    padding: 14px;
+    padding-top: 4px;
 }
 
 .highlight::before {
@@ -60,31 +66,35 @@
     left: 369px;
 }
 
-.delete-flag {
-    background: var(--gray-light);
+.cross {
+    position: relative;
     height: 10px;
+    justify-self: flex-end;
+}
+
+.cross .right-slash, .cross .left-slash {
+    background: var(--gray-light);
+    height: 8px;
     width: 2px;
     cursor: pointer;
-    position: absolute;    
-    top: 2px;
-    left: 409px;
     border-radius: 5px;
-    transform: rotate(45deg);
-    visibility: hidden;
-}
-
-.delete-flag:after {
-    background: var(--gray-light);
     position: absolute;
-    cursor: pointer;
-    content: "";
-    height: 2px;    
-    width: 10px;
-    left: -4px;
-    top: 4px;
-    border-radius: 5px;
+    top: 0;
+    left: 0;
+} 
+
+.cross .right-slash {
+    transform: rotate(-45deg);  
 }
 
-.delete-flag:hover{
-    background: red;
+.cross .left-slash {
+    transform: rotate(45deg);
+}
+
+.cross:hover > .right-slash {
+    background: var(--accent-color)
+}
+
+.cross:hover > .left-slash {
+    background: var(--accent-color)
 }
